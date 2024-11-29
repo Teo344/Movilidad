@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: yellow;
+    height: 100%;
+}
+
+@keyframes cambiocolores {
+    0% {
+        background-color: #e8504f;
+    }
+
+    25%{
+        background-color: #ffa157;
+        transform: scale(0.5); /*se amplia la mitad*/
+    }
+
+    50%{
+        background-color: #ffa157;
+        transform: scale(1.1);
+    }
+
+    75%{
+        background-color: #ffa157;
+        transform: scale(0.5);
+    }
+
+    100%{
+        background-color: #e8504f;
+    }
+}
+
+.circulo{
+    background-color: #e8504f;
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    /*Traigo el nombre del keyframe*/
+    animation-name: cambiocolores, volar;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    /*animation-timing-function: ease; ease: comienza lento, acelera y desacelera suavemente */
+    /*animation-timing-function: step(5,end);/*divide la animacion en 5 pasos, ocurre al mismo tiempo*/
+}
+
+@keyframes volar {
+    0%{}
+
+    25%{
+        transform: translate(20px,0px);
+    }
+
+    30%{
+        transform: translate(200px,0px) rotate(90deg);
+    }
+
+    40%{
+        transform: translate(200px,200px) rotate(90deg);
+    }
+
+    50%{
+        transform: translate(200px,200px) rotate(180deg);
+    }
+
+    100%{}
+}
